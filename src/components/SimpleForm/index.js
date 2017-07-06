@@ -1,47 +1,53 @@
+import styles from './index.less'
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import classNames from 'classnames/bind'
-import styles from './index.css'
+const cx = classNames.bind(styles)
+const FormItem = Form.Item
 
-let cx = classNames.bind(styles)
-
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && error && <span className={cx('error')}>{error}</span>}
-    </div>
-  </div>
-)
-
-class SimpleForm extends React.Component {
+class NormalLoginForm extends React.Component {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values)
+      }
+    })
+  }
   render () {
-    const { error, handleSubmit, pristine, reset, submitting, onSubmit } = this.props
+    const { getFieldDecorator } = this.props.form
     return (
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Field
-          name='username'
-          type='text'
-          component={renderField}
-          label='用户名'
-        />
-        <Field
-          name='password'
-          type='password'
-          component={renderField}
-          label='密码'
-        />
-        {error && <div className={cx('error')}>{error}</div>}
-        <div>
-          <button className={cx('btn')} type='submit' disabled={submitting}>提交</button>
-          <button className={cx('btn')} type='button' disabled={pristine || submitting} onClick={reset}>重置</button>
-        </div>
-      </form>
+      <Form onSubmit={this.handleSubmit} className={cx('login-form')}>
+        <FormItem>
+          {getFieldDecorator('userName', {
+            rules: [{ required: true, message: 'Please input your username!' }]
+          })(
+            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
+          )}
+        </FormItem>
+        <FormItem>
+          {getFieldDecorator('password', {
+            rules: [{ required: true, message: 'Please input your Password!' }]
+          })(
+            <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
+          )}
+        </FormItem>
+        <FormItem>
+          {getFieldDecorator('remember', {
+            valuePropName: 'checked',
+            initialValue: true
+          })(
+            <Checkbox>Remember me</Checkbox>
+          )}
+          <a className={cx('login-form-forgot')} href="">Forgot password</a>
+          <Button type="primary" htmlType="submit" className={cx('login-form-button')}>
+            Log in
+          </Button>
+          Or <a href="">register now!</a>
+        </FormItem>
+      </Form>
     )
   }
 }
 
-export default reduxForm({
-  form: 'submitValidation'
-})(SimpleForm)
+export default Form.create()(NormalLoginForm)

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import pureRender from 'pure-render-decorator'
+import { Button } from 'antd'
 
 @pureRender
 class Counter extends Component {
@@ -17,21 +18,21 @@ class Counter extends Component {
     let { counter, onDecrement, onIncrementAsync, onIncrementAsyncOnce } = this.props
     return (
       <div>
-        <button onClick={this.clickHandle}>
+        <Button onClick={this.clickHandle}>
               Increment
-        </button>
+        </Button>
         {' '}
-        <button onClick={onDecrement}>
+        <Button onClick={onDecrement}>
               Decrement
-        </button>
+        </Button>
         {' '}
-        <button onClick={onIncrementAsync}>
+        <Button onClick={onIncrementAsync}>
               IncrementAsync
-        </button>
+        </Button>
         {' '}
-        <button onClick={onIncrementAsyncOnce}>
+        <Button onClick={onIncrementAsyncOnce}>
               IncrementAsyncOnce
-        </button>
+        </Button>
         <hr />
         <div>Clicked: {counter}times</div>
       </div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import classNames from 'classnames/bind'
-import styles from './index.styl'
+import styles from './index.less'
 let cx = classNames.bind(styles)
 
 class App extends Component {

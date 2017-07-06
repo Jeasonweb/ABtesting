@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { reducer as form } from 'redux-form'
 
 import counter from './counter'
 import countTimer from './countTimer'
@@ -14,6 +13,5 @@ import countTimer from './countTimer'
 
 export default combineReducers({
   counter,
-  countTimer,
-  form
+  countTimer
 })
