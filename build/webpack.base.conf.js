@@ -7,11 +7,13 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    vendor: ['g2','g2-react']
   },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
+    chunkFilename : '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath

@@ -1,3 +1,4 @@
+let data = require('./mock/avg-temp.json')
 function Mock(app){
   app.get('/getSceneInfo',function(req,res){
     let sceneId = req.query.sceneId
@@ -9,6 +10,10 @@ function Mock(app){
         sceneId: sceneId
       }
     })
+  })
+
+  app.get('/getAvgTemp',(req,res)=>{
+    res.json( data )
   })
 }
 module.exports = Mock

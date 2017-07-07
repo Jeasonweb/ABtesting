@@ -10,4 +10,4 @@ class HomeContainer extends Component {
   }
 }
 
-export default withRouter(connect()(HomeContainer))
+export default connect()(HomeContainer)

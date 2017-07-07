@@ -9,6 +9,13 @@ function getSceneInfo (id) {
   })
 }
 
+function getAvgTemp () {
+  return axios({
+    url: '/api/getAvgTemp'
+  })
+}
+
 export {
-  getSceneInfo
+  getSceneInfo,
+  getAvgTemp
 }
