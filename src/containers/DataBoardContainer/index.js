@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import { Bundle } from '@/utils'
 import DataBoard from 'bundle-loader?lazy!@/containers/DataBoardContainer/DataBoardContainer'
 

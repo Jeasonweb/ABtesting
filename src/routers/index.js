@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, Redirect, Switch, HashRouter } from 'react-router-dom'
+import { Route, Redirect, Switch, HashRouter } from 'react-router-dom'
 
 import CounterContainer from '@/containers/CounterContainer'
 import AppContainer from '@/containers/AppContainer'

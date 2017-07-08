@@ -1,5 +1,5 @@
 import createG2 from 'g2-react'
-import { Stat } from 'g2'
+// import { Stat } from 'g2'
 import React from 'react'
 
 const Chart = createG2(chart => {
