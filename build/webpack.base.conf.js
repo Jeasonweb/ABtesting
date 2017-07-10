@@ -7,8 +7,10 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
+    // reactx: ["react", "react-dom", "react-router-dom", "react-redux", "redux", "redux-saga"], 
+    // g2: ['g2','g2-react'],
     app: './src/main.js',
-    vendor: ['g2','g2-react']
+    vendor: ['g2', 'g2-react']
   },
   output: {
     path: config.build.assetsRoot,
