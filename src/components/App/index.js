@@ -6,7 +6,7 @@ import classNames from 'classnames/bind'
 import styles from './index.less'
 let cx = classNames.bind(styles)
 const { Header, Sider, Content } = Layout
-
+const {Item} = Menu
 class App extends React.Component {
   state = {
     collapsed: false
@@ -24,20 +24,19 @@ class App extends React.Component {
           collapsible
           collapsed={this.state.collapsed}
         >
-          <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
+            <Item key="1">
               <Icon type="user" />
-              <span className="nav-text"><Link to='/home' replace>首页</Link></span>
-            </Menu.Item>
-            <Menu.Item key="2">
+              <span className={cx('nav-text')}><Link to='/home' replace>首页</Link></span>
+            </Item>
+            <Item key="2">
               <Icon type="video-camera" />
-              <span className="nav-text"><Link to='/counter' replace>计数页面</Link></span>
-            </Menu.Item>
-            <Menu.Item key="3">
+              <span className={cx('nav-text')}><Link to='/counter' replace>计数页面</Link></span>
+            </Item>
+            <Item key="3">
               <Icon type="upload" />
-              <span className="nav-text"><Link to='/databoard' replace>数据图表</Link></span>
-            </Menu.Item>
+              <span className={cx('nav-text')}><Link to='/databoard' replace>数据图表</Link></span>
+            </Item>
           </Menu>
         </Sider>
         <Layout>
