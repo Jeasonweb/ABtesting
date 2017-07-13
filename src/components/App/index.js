@@ -26,16 +26,20 @@ class App extends React.Component {
         >
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Item key="1">
-              <Icon type="user" />
+              <Icon type="home" />
               <span className={cx('nav-text')}><Link to='/home' replace>首页</Link></span>
             </Item>
             <Item key="2">
-              <Icon type="video-camera" />
+              <Icon type="usb" />
               <span className={cx('nav-text')}><Link to='/counter' replace>计数页面</Link></span>
             </Item>
             <Item key="3">
-              <Icon type="upload" />
-              <span className={cx('nav-text')}><Link to='/databoard' replace>数据图表</Link></span>
+              <Icon type="line-chart" />
+              <span className={cx('nav-text')}><Link to='/databoard' replace>动态加载数据图表</Link></span>
+            </Item>
+            <Item key="4">
+              <Icon type="user-add" />
+              <span className={cx('nav-text')}><Link to='/form' replace>表单页面</Link></span>
             </Item>
           </Menu>
         </Sider>
