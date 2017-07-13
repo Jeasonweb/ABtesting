@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect, Switch, HashRouter } from 'react-router-dom'
+import { Route, Redirect, Switch, BrowserRouter } from 'react-router-dom'
 
 import CounterContainer from '@/containers/CounterContainer'
 import AppContainer from '@/containers/AppContainer'
@@ -9,7 +9,7 @@ import FormContainer from '@/containers/SimpleFormContainer'
 import DataBoardAsync from '@/containers/DataBoardContainer'
 
 const routes = (
-  <HashRouter>
+  <BrowserRouter>
     <AppContainer>
       <Switch>
         <Route path='/counter' component={CounterContainer} />
@@ -20,7 +20,7 @@ const routes = (
       </Switch>
       <Redirect from='/' to='/home' />
     </AppContainer>
-  </HashRouter>
+  </BrowserRouter>
 )
 
 export default routes
